@@ -97,7 +97,7 @@ class DigitalTimer extends Component {
     if (isTimeRunning) {
       this.clearTimerInterval()
     } else {
-      this.intervalId = setInterval(this.incrementTimerElapsedInSeconds, 1000)
+      this.intervalId = setInterval(this.increamentTimerElapsedInSeconds, 1000)
     }
     this.setState(prevState => ({isTimeRunning: !prevState.isTimeRunning}))
   }
@@ -148,10 +148,9 @@ class DigitalTimer extends Component {
 
     const minutes = Math.floor(totalRemainingSeconds / 60)
     const seconds = Math.floor(totalRemainingSeconds % 60)
+
     const stringfiedMinutes = minutes > 9 ? minutes : `0${minutes}`
     const stringfiedSeconds = seconds > 9 ? seconds : `0${seconds}`
-
-    console.log(stringfiedSeconds)
 
     return `${stringfiedMinutes}:${stringfiedSeconds}`
   }
@@ -174,7 +173,6 @@ class DigitalTimer extends Component {
           <div className="control-container">
             {this.renderTimeController()}
             {this.renderTimeLimitController()}
-            {}
           </div>
         </div>
       </div>
